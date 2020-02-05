@@ -21,6 +21,7 @@ namespace OpenWeatherTests.Api.RestClient
             request.AddParameter("q", q);
             _logger.Log("Sending Get Current Weather request");
             IRestResponse response = _restClient.Get(request);
+            _logger.LogRequest(_restClient, request, response);
             return response;
         }
     }
